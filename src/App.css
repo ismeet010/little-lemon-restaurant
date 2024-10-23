@@ -1,0 +1,133 @@
+
+*{
+  text-decoration: none !important;
+  margin: 0;
+  padding: 0;
+  /* color: #495e57; */
+}
+
+/* Header */
+/* header{
+  border-bottom: 1rem solid #495e57;
+  color: #495e57;
+}
+nav{
+  background-color: white;
+  margin:0px;
+  height: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+nav img{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 75px;
+}
+#menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#menu a{
+    text-decoration: none;
+    list-style-type: none;
+    padding: 22px 10px;
+    margin: 5px;
+    color: #495e57;
+    font-size: medium;
+    font-weight: 500;
+}
+
+a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+
+ #menu a:hover{
+    background-color: #f4ce14;
+ } */
+
+
+button{
+    background-color: #f4ce14;
+    border: .1875rem solid #f4ce14;
+    border-radius: 2rem;
+    color: #495e57;
+    font-weight: 700;
+    padding: .5rem 1rem;
+    /* transition: background,border,color .5s; */
+    width: 180px;
+}
+
+.flex-row{
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+.space-evenly{
+  justify-content: space-evenly;
+}
+.gap{
+    margin-top: 80px;
+}
+.price{
+  color: orangered;
+  font-weight: 600;
+}
+
+.white-bold{
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.order-now{
+    color: #495e57;
+    text-decoration: none;
+    font-weight: 700;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
+
+.order-now svg {
+    margin-left: 0.5rem;
+}
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+    overflow: visible;
+    box-sizing: content-box;
+}
+.svg-inline--fa {
+    display: var(--fa-display, inline-block);
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+}
+
+/* @media screen and (max-width: 680px) {
+  #menu{
+    visibility: hidden;
+  }
+    .hero-res{
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hero-image{
+      width: 90%;
+    }
+
+} */
+
+
+.bottomborder{
+  border-bottom: #495e57 solid  5px;
+}

@@ -1,0 +1,138 @@
+.hero, .about-bg{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
+    background-color: #495e57;
+    padding-top: 1.875rem;
+    padding-bottom: 1rem;
+}
+.max-width{
+    max-width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-content, .about-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+    gap: 1rem;
+    
+}
+
+.hero-content h2, .about-content h2{
+        color: #f4ce14;
+    }
+.hero-content h3, .hero-content p, .about-content h3 , .about-content p{
+        color: white;
+    }
+.about-image{
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.about-image img{
+    height: 20rem;
+    justify-self: end;
+    object-fit: cover;
+    width: 30rem;
+    padding: 20px;
+    border-radius: 2rem;
+}
+
+.hero-image{
+    height: 24rem;
+    justify-self: end;
+    margin-bottom: -4.375rem;
+    object-fit: cover;
+    max-width: 95%;
+    padding: 20px;
+    border-radius: 2rem;
+}
+.wspcl{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 30px;
+    column-gap: 100px;
+
+}
+.wsp{
+    display: flex;
+    justify-content: center;
+}
+.wsp .max-width{
+    flex-direction: column;
+
+}
+
+.heading-gap{
+    text-align: center;
+}
+
+
+.scard{
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 5%;
+    background-color: rgb(232, 225, 225);
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.scard:hover, .card:hover{
+    box-shadow: 0 0 30px -10px black;
+}
+
+.scard .image-box {
+    position: relative;
+    /* margin: auto; */
+    overflow: hidden;
+    border-radius: 5%;
+    /* height: 350px; */
+}
+
+.scard img{
+    width: 300px;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+.scard img:hover {
+  transform: scale(1.5);
+}
+.scard-cont{
+    padding: 10px;
+}
+
+.scard h4{
+    font-size: 25px;
+    font-weight: 300;
+    margin: 2px;
+    padding: 0;
+}
+
+.splcard-description{
+    font-weight: 300;
+    font-size: 18px;
+    color: black;
+}
+
+.construction{
+    display: flex;
+    justify-content: center;
+}
+
+.const-img{
+    max-width: 80vw;
+}
+

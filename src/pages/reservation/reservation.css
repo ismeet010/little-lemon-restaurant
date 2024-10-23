@@ -1,0 +1,76 @@
+
+.reserDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reserDiv h2{
+    background-color: #495e57;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+}
+
+.reservationForm{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    width: 400px;
+    height: 500px;
+}
+
+.reservationForm input, .reservationForm button{
+    margin-top: 10px;
+    padding: 5px;
+}
+.reservationForm label{
+    margin-top: 10px;
+    color: #495e57;
+    font-weight: 500;
+}
+.reservationForm input, .reservationForm select{
+    border-radius: 5px;
+    border-color: rgb(178, 187, 193);
+    height: 30px;
+}
+
+.buttongap{
+    margin-top: 50px;
+}
+.menu-div{
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    width: 80%;
+    justify-content: center;
+    background-color: rgb(222, 218, 218);
+    gap: 8vw;
+    padding: 25px;
+}
+.menu-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #f4ce14;
+    font-weight: 400;
+}
+
+.menu .menu-col-1, .menu .menu-col-2 {
+    padding: 25px;
+
+}
+.menu-h3{
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.menu-width{
+    min-width: 20vw;
+}
+
+
