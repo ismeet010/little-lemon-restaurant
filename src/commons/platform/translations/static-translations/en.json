@@ -1,3 +1,9 @@
 {
-  "en": {}
+  "en": {
+    "home": {
+      "hero-paragraph": "We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.",
+      "reserve-a-table": "Reserve a Table"
+    },
+    "about": {}
+  }
 }

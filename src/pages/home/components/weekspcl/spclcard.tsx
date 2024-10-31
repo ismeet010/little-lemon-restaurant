@@ -20,7 +20,6 @@ const Spclcard: FC<ISpclcard> = ({ entry }) => {
         <div className="image-box">
           <img src={entry.imgsrc} alt={entry.imgalt} />
         </div>
-        {/* <div className="flex-column space-evenly scard-cont"> */}
         <div className="flex-row space-between scard-cont">
           <h4>{entry.name}</h4>
           <h4 className="price">{entry.price}</h4>
@@ -46,7 +45,6 @@ const Spclcard: FC<ISpclcard> = ({ entry }) => {
         </a>
       </div>
     </div>
-    // </div>
   );
 };
 

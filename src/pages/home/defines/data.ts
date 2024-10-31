@@ -1,9 +1,5 @@
-import React from "react";
-import { Spclcard } from "./spclcard";
-import "./wspcl.css";
 
-const Weekspcl = () => {
-  const spcldata = [
+const spcldata = [
     {
       imgsrc:
         "https://littlelemon.alexismenest.vercel.app/static/media/greek-salad.25fc793faeb3d58ed9fb.jpg",
@@ -32,21 +28,5 @@ const Weekspcl = () => {
         "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
     },
   ];
-  return (
-    <section className="wsp">
-      <div className="max-width">
-        <div className="flex-row gap space-between">
-          <h2>This week Specials!</h2>
-          <button>Check menu</button>
-        </div>
-        <div className="wspcl">
-          {spcldata.map((entry) => (
-            <Spclcard entry={entry} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
 
-export { Weekspcl };
+export {spcldata}
