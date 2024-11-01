@@ -1,25 +1,27 @@
 import React from "react";
-import "./wspcl.css";
-import { spcldata } from "../../defines/data";
+import { specialData } from "../../defines/data";
 import {
   WspContainer,
   MaxWidthContainer,
   ContainerHeader,
   ContainerBody,
+  Heading,
 } from "./weekspcl.styles";
-import { Spclcard } from "./spclcard";
+import { SpecialCard } from "../special-card/special-card";
+import { Typography } from "@mui/material";
+import { ComButton } from "../../../../commons/style/style";
 
 const Weekspcl = () => {
   return (
     <WspContainer>
       <MaxWidthContainer>
         <ContainerHeader>
-          <h2>This week Specials!</h2>
-          <button>Check menu</button>
+          <Heading>This week Specials!</Heading>
+          <ComButton>Check menu</ComButton>
         </ContainerHeader>
         <ContainerBody>
-          {spcldata.map((entry) => (
-            <Spclcard entry={entry} />
+          {specialData.map((entry) => (
+            <SpecialCard entry={entry} />
           ))}
         </ContainerBody>
       </MaxWidthContainer>

@@ -1,5 +1,6 @@
 import React from "react";
 import type { FC } from "react";
+import { Card, CardImage, CardHeading } from "./testimonial-card.styles";
 
 interface IEntry {
   image: string;
@@ -9,11 +10,11 @@ interface IEntry {
   rating: number;
 }
 
-interface ITcard {
+interface ITestimonialCard {
   entry: IEntry;
 }
 
-const Tcard: FC<ITcard> = ({ entry }) => {
+const TestimonialCard: FC<ITestimonialCard> = ({ entry }) => {
   // const numToStarRating = (num) => {
   //   // return <i className="fab fa-facebook"></i>;
 
@@ -27,17 +28,17 @@ const Tcard: FC<ITcard> = ({ entry }) => {
   //   return htmlObject;
   // };
   return (
-    <div className="card">
-      <img src={entry.image} alt={entry.alt} />
-      <h4>{entry.name}</h4>
+    <Card>
+      <CardImage src={entry.image} alt={entry.alt} />
+      <CardHeading>{entry.name}</CardHeading>
       <span>
         {/* {entry.rating.map((e) => (
           <i className="fab fa-facebook"></i>
         ))} */}
       </span>
       <q>{entry.quote}</q>
-    </div>
+    </Card>
   );
 };
 
-export { Tcard };
+export { TestimonialCard };

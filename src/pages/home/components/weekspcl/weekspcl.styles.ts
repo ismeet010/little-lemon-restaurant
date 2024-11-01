@@ -1,9 +1,11 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 export const WspContainer = styled(Box)({
   display: "flex",
- justifyContent: "center"
+ justifyContent: "center",
+ marginTop: '1rem',
+ marginBottom:'1rem'
 });
 
 export const MaxWidthContainer = styled(Box)({
@@ -26,6 +28,12 @@ export const ContainerBody = styled(Box)({
     flexWrap: "wrap",
     justifyContent: "flex-start",
     rowGap: "30px",
-    columnGap: "100px"
+    columnGap: "10px"
 
+})
+
+export const Heading = styled(Typography)({
+  color: "black",
+  fontWeight: "500",
+  marginBottom: "1rem"
 })

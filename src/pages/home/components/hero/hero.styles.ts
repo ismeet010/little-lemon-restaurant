@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 export const HeroContainer = styled(Box)({
@@ -37,18 +37,13 @@ export const HeroParagraph = styled(Typography)({
   color: "white",
 });
 
-export const HeroButton = styled(Button)({
-  backgroundColor: "#f4ce14",
-  "&:hover": {
-    backgroundColor: "#f4ce14",
-  },
-});
-
 export const HeroImage = styled("img")({
   height: "24rem",
   marginBottom: "-4.375rem",
   objectFit: "cover",
   maxWidth: "95%",
-  padding: "20px",
   borderRadius: "2rem",
+  "&:hover": {
+    boxShadow: "0 4px 10px rgba(25, 25, 25, 0.7)"
+    }
 });
