@@ -1,61 +1,72 @@
 import React from "react";
-import "./footer.css";
+import { Typography } from "@mui/material";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import {
+  FooterContainer,
+  FooterGrid,
+  FooterItem,
+  FooterTitle,
+  FooterLink,
+  SocialLinksContainer,
+  SocialIconButton,
+  FooterLogo,
+} from "./footer.styles";
 import logo from "../../../assets/logo-footer.png";
-import { NavLink } from "react-router-dom";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
-    <footer>
-      <div className="footer">
-        <div className="max-width">
-          <div className="col-1">
-            <img src={logo} alt="logo" width="80px" />
-          </div>
-          <div className="col-2">
-            <h3>Useful links</h3>
-            <ul className="footer-links">
-              <li className="links">
-                <NavLink className="link" to="little-lemon-app">
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="link" to="little-lemon-app/about">
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="link" to="little-lemon-app/menu">
-                  Menu
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="link" to="little-lemon-app/reservation">
-                  Reservation
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="link" to="little-lemon-app/login">
-                  Login
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-          <div className="col-3">
-            <h3>Contact us</h3>
-            <p>address...India</p>
-          </div>
-          <div className="col-4">
-            <h3>Connect with us</h3>
-            <div className="social-icons">
-              <i className="fab fa-facebook"></i>
-              <i className="fab fa-twitter"></i>
-              <i className="fab fa-instagram"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <FooterContainer>
+      <FooterGrid container>
+        {/* Logo Section */}
+        <FooterItem>
+          <FooterLogo src={logo} alt="little lemon logo" />
+        </FooterItem>
+
+        {/* Useful Links */}
+        <FooterItem>
+          <FooterTitle variant="subtitle1">Useful links</FooterTitle>
+          <FooterLink href="#">Home</FooterLink>
+          <FooterLink href="#">About</FooterLink>
+          <FooterLink href="#">Menu</FooterLink>
+          <FooterLink href="#">Reservation</FooterLink>
+          <FooterLink href="#">Login</FooterLink>
+        </FooterItem>
+
+        {/* Contact Us */}
+        <FooterItem>
+          <FooterTitle variant="subtitle1">Contact us</FooterTitle>
+          <Typography variant="body1">
+            29, Mithila Nagar, Banjara Hills,
+          </Typography>
+          <Typography variant="body1">
+            Hyderabad, India <Typography variant="body2">500034</Typography>
+          </Typography>
+        </FooterItem>
+
+        {/* Connect With Us */}
+        <FooterItem>
+          <FooterTitle variant="subtitle1">Connect with us</FooterTitle>
+          <SocialLinksContainer>
+            <SocialIconButton aria-label="Twitter">
+              <TwitterIcon /> <Typography>/little_lemon</Typography>
+            </SocialIconButton>
+            <SocialIconButton aria-label="Facebook">
+              <FacebookIcon /> <Typography>/little_lemon</Typography>
+            </SocialIconButton>
+            <SocialIconButton
+              onClick={() =>
+                window.open("https://www.instagram.com/ismeet_chhabda")
+              }
+              aria-label="Instagram"
+            >
+              <InstagramIcon /> <Typography>/little_lemon</Typography>
+            </SocialIconButton>
+          </SocialLinksContainer>
+        </FooterItem>
+      </FooterGrid>
+    </FooterContainer>
   );
 };
 

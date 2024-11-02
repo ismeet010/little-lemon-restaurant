@@ -8,7 +8,6 @@ import {
   Heading,
 } from "./weekspcl.styles";
 import { SpecialCard } from "../special-card/special-card";
-import { Typography } from "@mui/material";
 import { ComButton } from "../../../../commons/style/style";
 
 const Weekspcl = () => {
@@ -17,7 +16,7 @@ const Weekspcl = () => {
       <MaxWidthContainer>
         <ContainerHeader>
           <Heading>This week Specials!</Heading>
-          <ComButton>Check menu</ComButton>
+          <ComButton href="/little-lemon-restaurant/menu">Check menu</ComButton>
         </ContainerHeader>
         <ContainerBody>
           {specialData.map((entry) => (
