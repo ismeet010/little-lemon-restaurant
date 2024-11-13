@@ -1,37 +1,66 @@
-import React, { useState } from "react";
-import "./reservation.css";
+import React, { useState, useEffect } from "react";
+import { Box, TextField, MenuItem, Button, Typography } from "@mui/material";
+import {
+  ReservationContainer,
+  // FormField,
+  // SubmitButton,
+  // ErrorText,
+} from "./reservation.styles";
 import { ReservationContent } from "./reservation-content";
 
-// Define form data state type (same as in ReservationContent)
-interface FormData {
-  date: string;
-  time: string;
-  guests: number;
-  occasion: string;
-}
-
 const Reservation: React.FC = () => {
-  const [bookingDetails, setBookingDetails] = useState<string>(""); // State to store booking details
-  const availableTimes: string[] = ["12", "2", "4", "6", "8"]; // List of available times
+  // const [hour, setHour] = useState("");
+  // const [minute, setMinute] = useState("00");
+  // const [period, setPeriod] = useState("AM");
+  // const [error, setError] = useState("");
 
-  // Define a function to handle form data in Reservation
-  const handleReservation = (formData: FormData) => {
-    // Perform actions with the form data in Reservation
-    console.log("Form data in Reservation:", formData);
-    // Update booking details state
-    setBookingDetails(`Your booking for ${formData.date} has been successful!`);
-  };
+  // const hours = Array.from({ length: 12 }, (_, i) => i + 1);
+  // const minutes = ["00", "30"];
+  // const periods = ["AM", "PM"];
+
+  // const handleHourChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setHour(event.target.value);
+  // };
+
+  // const handleMinuteChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setMinute(event.target.value);
+  // };
+
+  // const handlePeriodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setPeriod(event.target.value);
+  // };
+
+  // const validateTime = () => {
+  //   const hourNum = parseInt(hour);
+
+  //   if (
+  //     period === "AM" &&
+  //     (hourNum < 11 || (hourNum === 12 && minute === "00"))
+  //   ) {
+  //     setError("Restaurant opens from 11:00 AM.");
+  //   } else if (period === "PM" && hourNum === 12 && minute === "30") {
+  //     setError("Restaurant closes at 11:00 PM.");
+  //   } else if (period === "AM" && hourNum === 12) {
+  //     setError("12:00 AM is outside of restaurant hours.");
+  //   } else {
+  //     setError("");
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   validateTime();
+  // }, [hour, minute, period]);
+
+  // const handleSubmit = () => {
+  //   if (!error) {
+  //     alert(`Reservation made for ${hour}:${minute} ${period}`);
+  //   }
+  // };
 
   return (
-    <div className="reserDiv">
-      <h2 className="white-bold">Table Reservation</h2>
-      <ReservationContent
-        availableTimes={availableTimes}
-        onReservation={handleReservation}
-      />
-
-      <div>{bookingDetails}</div>
-    </div>
+    <ReservationContainer>
+      <ReservationContent />
+    </ReservationContainer>
   );
 };
 

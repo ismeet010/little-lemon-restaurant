@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 export const ComButton = styled(Button)({
@@ -15,3 +15,11 @@ export const ComButton = styled(Button)({
     boxShadow: "0 4px 10px rgba(25, 25, 25, 0.7)"
     }
 })
+
+export const ComTitle = styled(Typography)({
+  marginBottom: "16px",
+  fontWeight: "bold",
+  fontSize: "2.5rem",
+  color: "#f4ce14",
+  paddingTop: "10px"
+});
