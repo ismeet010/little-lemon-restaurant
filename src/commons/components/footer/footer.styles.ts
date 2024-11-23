@@ -5,6 +5,9 @@ export const FooterContainer = styled(Box)({
   backgroundColor: "#1a1a1a",
   color: "#ffffff",
   padding: "32px 16px",
+  left: 0,
+  bottom: 0,
+  width: '100vw'
 });
 
 export const FooterGrid = styled(Grid)({

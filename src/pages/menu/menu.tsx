@@ -2,18 +2,20 @@ import React from "react";
 import { MenuItem } from "./components/menu-item";
 import {
   MenuContainer,
-  MenuHeading,
   MenuSections,
   MenuCategory,
   MenuCategoryHeading,
 } from "./menu.styles.ts";
 import { MenuData } from "./defines/data.ts";
 import { ComTitle } from "../../commons/style/style.ts";
+import { ResMenuIcon } from "../../commons/icons/res-menu-icon.tsx";
 
 const Menu: React.FC = () => {
   return (
     <MenuContainer>
-      <ComTitle variant="h2">Our Menu</ComTitle>
+      <ComTitle variant="h2">
+        Our Menu <ResMenuIcon fill="#495e57" />{" "}
+      </ComTitle>
       <MenuSections>
         {Object.entries(MenuData).map(([category, items]) => (
           <MenuCategory key={category}>

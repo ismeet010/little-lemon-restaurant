@@ -5,33 +5,42 @@ import { Home } from "./pages/home/home";
 import { Footer } from "./commons/components/footer/footer";
 import { Reservation } from "./pages/reservation/reservation";
 import { About } from "./pages/about/about";
-import { Underconstruction } from "./pages/underconstruction";
-import { RightNav } from "./commons/components/navbar/rightNav";
+import { Navbar } from "./commons/components/navbar/navbar";
 import { Menu } from "./pages/menu/menu";
+import { AuthPage } from "./pages/form/form";
+import { Box } from "@mui/material";
 
 const App = () => {
   return (
     <BrowserRouter>
       {/* Link and NavLink are different as when we click on navlink it gets a class="active" in it */}
-      <RightNav />
-      <main>
-        <Routes>
-          {/* index is same thing as path="/" */}
-          <Route path="little-lemon-restaurant" element={<Home />} />
-          <Route path="little-lemon-restaurant/about" element={<About />} />
-          <Route
-            path="little-lemon-restaurant/reservation"
-            element={<Reservation />}
-          />
-          <Route
-            path="little-lemon-restaurant/login"
-            element={<Underconstruction />}
-          />
-          <Route path="little-lemon-restaurant/menu" element={<Menu />} />
-          {/* <Route path="/" element={<Home />} /> */}
-        </Routes>
-      </main>
-      <Footer />
+      <Box
+        sx={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Navbar />
+        <Box component="main" sx={{ flex: 1 }}>
+          <Routes>
+            {/* index is same thing as path="/" */}
+            <Route path="little-lemon-restaurant" element={<Home />} />
+            <Route path="little-lemon-restaurant/about" element={<About />} />
+            <Route
+              path="little-lemon-restaurant/reservation"
+              element={<Reservation />}
+            />
+            <Route
+              path="little-lemon-restaurant/login"
+              element={<AuthPage />}
+            />
+            <Route path="little-lemon-restaurant/menu" element={<Menu />} />
+            {/* <Route path="/" element={<Home />} /> */}
+          </Routes>
+        </Box>
+        <Footer />
+      </Box>
     </BrowserRouter>
   );
 };

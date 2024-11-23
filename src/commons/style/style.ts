@@ -4,10 +4,12 @@ import { styled } from "@mui/system";
 export const ComButton = styled(Button)({
     backgroundColor: '#f4ce14',
     border: '0.2rem solid #f4ce14',
-    borderRadius: '2rem',
+    borderRadius: '1rem',
     color: '#495e57',
     fontWeight: '600',
+    textTransform: "uppercase",
     padding: '0.5rem 0.75rem',
+    marginTop: "10px",
     /* transition: background,border,color .5s; */
     width: '180px',
     "&:hover": {
