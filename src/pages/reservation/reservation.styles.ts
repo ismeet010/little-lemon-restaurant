@@ -1,8 +1,8 @@
 import { styled } from "@mui/material/styles";
-import { Box, TextField, Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 
 export const ReservationContainer = styled(Box)({
-  maxWidth: "550px",
+  maxWidth: "35rem",
   margin: "0 auto",
   padding: "60px",
   backgroundColor: "#f9f9f9",

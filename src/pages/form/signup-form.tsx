@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signup } from "./authService";
+import { loginWithGoogle, signup } from "../../commons/context/authService";
 import { ComButton } from "../../commons/style/style";
 import {
   FormContainer,
@@ -22,6 +22,15 @@ const SignUp = () => {
     }
   };
 
+  const handleGoogleSignup = async () => {
+    try {
+      await loginWithGoogle();
+      alert("Signup Successful with Google!");
+    } catch (err: any) {
+      setError("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <FormContainer>
       <FormFields>
@@ -41,6 +50,14 @@ const SignUp = () => {
       </FormFields>
       {error && <ErrorText style={{ color: "red" }}>{error}</ErrorText>}
       <ComButton onClick={handleSignup}>Signup</ComButton>
+      <ComButton
+        variant="outlined"
+        color="primary"
+        onClick={handleGoogleSignup}
+        style={{ marginTop: "16px", width: "100%", maxWidth: "400px" }}
+      >
+        Continue with Google
+      </ComButton>
     </FormContainer>
   );
 };

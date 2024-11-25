@@ -41,7 +41,7 @@ const Navbar = () => {
     { label: "About", to: "/little-lemon-restaurant/about" },
     { label: "Menu", to: "/little-lemon-restaurant/menu" },
     { label: "Reservation", to: "/little-lemon-restaurant/reservation" },
-    // { label: "Login", to: "/little-lemon-restaurant/login" },
+    { label: "Order", to: "/little-lemon-restaurant/order-online" },
   ];
 
   const toggleMenu = () => {

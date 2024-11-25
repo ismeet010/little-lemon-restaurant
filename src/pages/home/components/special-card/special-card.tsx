@@ -42,7 +42,7 @@ const SpecialCard: FC<ISpecialCard> = ({ entry }) => {
         </CardContent>
       </CardActionArea>
       <CardActions style={{ marginTop: "auto" }}>
-        <LButton size="small" href="/order-online">
+        <LButton size="small" href="little-lemon-restaurant/order-online">
           <Typography>Order a delivery</Typography>
         </LButton>
         <MotorcycleIcon fill={"#495e57"} />

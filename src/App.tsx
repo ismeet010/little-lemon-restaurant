@@ -9,6 +9,8 @@ import { Navbar } from "./commons/components/navbar/navbar";
 import { Menu } from "./pages/menu/menu";
 import { AuthPage } from "./pages/form/form";
 import { Box } from "@mui/material";
+import { ProfilePage } from "./commons/components/profile/profile";
+import { OrderPage } from "./pages/order-online/order-online";
 
 const App = () => {
   return (
@@ -36,7 +38,14 @@ const App = () => {
               element={<AuthPage />}
             />
             <Route path="little-lemon-restaurant/menu" element={<Menu />} />
-            {/* <Route path="/" element={<Home />} /> */}
+            <Route
+              path="little-lemon-restaurant/profile"
+              element={<ProfilePage />}
+            />
+            <Route
+              path="little-lemon-restaurant/order-online"
+              element={<OrderPage />}
+            />
           </Routes>
         </Box>
         <Footer />

@@ -4,7 +4,23 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  GoogleAuthProvider ,
+  signInWithPopup
 } from "firebase/auth";
+
+export const loginWithGoogle = async () => {
+  const provider = new GoogleAuthProvider();
+  try {
+    const result = await signInWithPopup(auth, provider);
+    // Get user info
+    const user = result.user;
+    console.log("Google Login Successful: ", user);
+    return user;
+  } catch (err: any) {
+      console.error("Error during Google login: ", err.message);
+      throw err;
+    }
+};
 
 // Signup Function
 export const signup = async (email: string, password: string) => {
@@ -48,5 +64,5 @@ export const logout = async () => {
 
 // Observe Auth State
 export const observeAuthState = (callback: (user: any) => void) => {
-  onAuthStateChanged(auth, callback);
+  return onAuthStateChanged(auth, callback);
 };

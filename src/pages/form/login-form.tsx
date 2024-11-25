@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { login } from "./authService";
+import { login, loginWithGoogle } from "../../commons/context/authService";
 import {
   FormContainer,
   FormFields,
@@ -7,24 +7,38 @@ import {
   ErrorText,
 } from "./form.styles";
 import { ComButton } from "../../commons/style/style";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
       await login(email, password);
       alert("Login Successful!");
+      const redirectPath = localStorage.getItem("redirectAfterLogin") || "/";
+      navigate(redirectPath);
     } catch (err: any) {
       setError(err.message);
     }
   };
 
+  const handleGoogleLogin = async () => {
+    try {
+      await loginWithGoogle();
+      const redirectPath = localStorage.getItem("redirectAfterLogin") || "/";
+      navigate(redirectPath);
+      // alert("Login Successful with Google!");
+    } catch (err: any) {
+      setError("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <FormContainer>
-      {/* <FormTitle variant="h4">Login</FormTitle> */}
       <FormFields>
         <StyledTextField
           label="Email"
@@ -45,6 +59,14 @@ const Login = () => {
       </FormFields>
       {error && <ErrorText>{error}</ErrorText>}
       <ComButton onClick={handleLogin}>Login</ComButton>
+      <ComButton
+        variant="outlined"
+        color="primary"
+        onClick={handleGoogleLogin}
+        style={{ marginTop: "16px", width: "100%", maxWidth: "400px" }}
+      >
+        Continue with Google
+      </ComButton>
     </FormContainer>
   );
 };

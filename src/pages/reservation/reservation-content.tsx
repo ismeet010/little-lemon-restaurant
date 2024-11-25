@@ -1,8 +1,10 @@
 import { FormControl, TextField, SelectChangeEvent } from "@mui/material";
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ComButton, ComTitle } from "../../commons/style/style";
+import { useNavigate } from "react-router-dom"; // For navigation
+import { AuthContext } from "../../commons/context/AuthContext";
 
 // Define Props type
 // interface ReservationContentProps {
@@ -26,6 +28,8 @@ const ReservationContent = () => {
     occasion: "",
   });
   const [startDate, setStartDate] = useState(new Date());
+  const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AuthContext);
 
   // Handler for TextField inputs
   const handleTextFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +42,18 @@ const ReservationContent = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!isLoggedIn) {
+      // Redirect to login and save current path
+      alert("You need to log in to make a reservation!");
+      localStorage.setItem(
+        "redirectAfterLogin",
+        "/little-lemon-restaurant/reservation"
+      );
+      navigate("/little-lemon-restaurant/login");
+      return;
+    }
     console.log(formData);
+    alert("reservation successful!");
     // props.onReservation(formData);
   };
 
@@ -102,25 +117,6 @@ const ReservationContent = () => {
           onChange={handleTextFieldChange}
         />
       </FormControl>
-
-      {/* <FormControl fullWidth margin="normal">
-        <InputLabel id="occasion-label" shrink>
-          Occasion
-        </InputLabel>
-        <Select
-          label="Occasion"
-          // labelId="occasion-label"
-          value={formData.occasion}
-          onChange={handleSelectChange}
-          displayEmpty
-          inputProps={{ id: "occasion" }}
-        >
-          <MenuItem value="">Select Occasion</MenuItem>
-          <MenuItem value="bday">Birthday</MenuItem>
-          <MenuItem value="anniversary">Anniversary</MenuItem>
-        </Select>
-      </FormControl> */}
-
       <ComButton fullWidth variant="contained" type="submit">
         Reserve!!
       </ComButton>

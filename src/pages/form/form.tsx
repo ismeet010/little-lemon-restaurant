@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Box, Typography, Tabs, Tab, Paper } from "@mui/material";
+import { Container, Box, Tabs, Tab, Paper } from "@mui/material";
 import { Login } from "./login-form";
 import { SignUp } from "./signup-form";
 import { ComTitle } from "../../commons/style/style";
