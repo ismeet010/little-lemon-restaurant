@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Container, Box, Tabs, Tab, Paper } from "@mui/material";
-import { Login } from "./login-form";
-import { SignUp } from "./signup-form";
+// import { Login } from "./login-form";
+// import { SignUp } from "./signup-form";
 import { ComTitle } from "../../commons/style/style";
+import { Auth } from "./auth";
 
 const AuthPage: React.FC = () => {
   const [authMode, setAuthMode] = useState<"login" | "signup">("login");
@@ -38,7 +39,11 @@ const AuthPage: React.FC = () => {
               height: "100%", // Ensure full height is used
             }}
           >
-            {authMode === "login" ? <Login /> : <SignUp />}
+            {authMode === "login" ? (
+              <Auth isSignup={false} />
+            ) : (
+              <Auth isSignup={true} />
+            )}
           </Box>
         </Box>
       </Paper>

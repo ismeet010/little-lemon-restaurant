@@ -1,39 +1,55 @@
 import React, { useState } from "react";
-import { login, loginWithGoogle } from "../../commons/context/authService";
+import {
+  login,
+  loginWithGoogle,
+  signup,
+} from "../../commons/context/authService";
+import { ComButton } from "../../commons/style/style";
 import {
   FormContainer,
   FormFields,
   StyledTextField,
   ErrorText,
 } from "./form.styles";
-import { ComButton } from "../../commons/style/style";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-const Login = () => {
+const Auth = ({ isSignup }: { isSignup: boolean }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch(); // Dispatch to Redux
 
-  const handleLogin = async () => {
+  const handleAuth = async () => {
     try {
-      await login(email, password);
-      alert("Login Successful!");
+      if (isSignup) {
+        await signup(email, password, dispatch); // For signup
+        alert("Signup Successful!");
+      } else {
+        await login(email, password, dispatch); // For login
+        alert("Login Successful!");
+      }
       const redirectPath = localStorage.getItem("redirectAfterLogin") || "/";
       navigate(redirectPath);
     } catch (err: any) {
-      setError(err.message);
+      setError(err.message); // Handle error
     }
   };
 
-  const handleGoogleLogin = async () => {
+  const handleGoogleAuth = async () => {
     try {
-      await loginWithGoogle();
+      if (isSignup) {
+        await loginWithGoogle(dispatch); // Google signup
+        alert("Signup Successful with Google!");
+      } else {
+        await loginWithGoogle(dispatch); // Google login
+        alert("Login Successful with Google!");
+      }
       const redirectPath = localStorage.getItem("redirectAfterLogin") || "/";
       navigate(redirectPath);
-      // alert("Login Successful with Google!");
     } catch (err: any) {
-      setError("Something went wrong. Please try again.");
+      setError("Something went wrong. Please try again."); // Handle error
     }
   };
 
@@ -58,11 +74,13 @@ const Login = () => {
         />
       </FormFields>
       {error && <ErrorText>{error}</ErrorText>}
-      <ComButton onClick={handleLogin}>Login</ComButton>
+      <ComButton onClick={handleAuth}>
+        {isSignup ? "Signup" : "Login"}
+      </ComButton>
       <ComButton
         variant="outlined"
         color="primary"
-        onClick={handleGoogleLogin}
+        onClick={handleGoogleAuth}
         style={{ marginTop: "16px", width: "100%", maxWidth: "400px" }}
       >
         Continue with Google
@@ -71,4 +89,4 @@ const Login = () => {
   );
 };
 
-export { Login };
+export { Auth };

@@ -7,8 +7,8 @@ import {
   I18nextProvider,
   i18n,
 } from "./commons/platform/translations/modules/i18n";
-import { store } from "./store/store";
 import { AuthProvider } from "./commons/context/AuthContext";
+import store from "./store/store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

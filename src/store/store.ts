@@ -1,11 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
+import usersReducer from "./slices/user/user.slices"; // Import the users slice reducer
+import reservationReducer from "./slices/reservation/reservation.slice"; // Import the users slice reducer
+import orderReducer from "./slices/order/order.slice"; // Import the users slice reducer
 
 const store = configureStore({
-    reducer: {}
-})
+  reducer: {
+    users: usersReducer,
+    reservation: reservationReducer,
+     order: orderReducer,
+  },
+});
 
-type TAppDispatch = typeof store.dispatch;
-type TRootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
-export type {TAppDispatch, TRootState};
-export {store};
+export default store;
